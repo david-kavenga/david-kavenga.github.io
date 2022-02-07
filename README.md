@@ -54,4 +54,4 @@ It is displayed on the index page using a small `<iframe>` with no border. The p
       }
     }
 ```
-This shows some of the key rules which dictate the penguin's animated right hand. animation duration, name, iteration count, transformation origin and timing function are defined. `@keyframes` defines rules for the animation. In this case, the arm is rotated four times based on time during the animation. The percentages correspond to how far through the duration the transformation occurs.
+This shows some of the key rules which dictate the movement of the penguin's right hand. Animation duration, name, iteration count, transformation origin and timing function are defined. `@keyframes` defines rules for the animation. In this case, the arm is rotated four times during the animation. The percentages correspond to how far through the animation (of the total 3s) the transformation occurs.
