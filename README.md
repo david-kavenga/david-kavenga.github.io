@@ -72,9 +72,9 @@ This shows some of the key rules which dictate the movement of the penguin's rig
 
 <hr>
 
-### There's a Sea in my Bedroom
+### *There's a Sea in my Bedroom*
 
-One of my first books. I wanted to make the sea a part of my site. After some time mucking around, and a few outright failures, I have a background I'm happy with (for now!). Here is some of the process behind it's creation.
+One of my first books. I've always loved the sea and one of my favorite pieces of art is *'The Great Wave'*. In Japan, I lived not too far from the famous *Naruto whirlpools* and found them fascinating. I wanted to bring these things together and make the sea a part of my site. After some time mucking around, and a few outright failures, I have a background I'm happy with (for now!). Here is some of the process behind it's creation.
 
 #### PixilArt
 
@@ -85,7 +85,7 @@ I needed a square to tile, so I went with a 32*32 canvas. Some tutorials on pixe
 
 <p align="center"><img src="./resources/readme/PixilArt1.png" width="100%"></p>
 
-Repeating via rotation and wrapping left-right top-bottom.
+Repeating via rotation and wrapping left-right top-bottom for a whirlpool look.
 
 <p align="center"><img src="./resources/readme/PixilArt2.png" width="100%"></p>
 
@@ -103,7 +103,7 @@ Done!
 
 However, the tile itself is a bit busy to go on the website as is. I'd like it to be fainter as well as change the white to a softer colour. After some searching, I learned it is possible to do all that without going back and editing pixel by pixel.
 
-Enter Gradients:
+#### Enter Gradients:
 
 ```CSS
 background: linear-gradient(0deg, 
