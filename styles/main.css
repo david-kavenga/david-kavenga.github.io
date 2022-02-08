@@ -1,25 +1,38 @@
 /*apply to all elements */
 * { 
-  /*margin: 0;*/
-  /*padding: 0;*/
-  /*border: none;*/
   font-family: Arial, sans-serif;
-  box-sizing: border-box;
+  box-sizing: border-box;   /* make elements use border-box model */
+}
+html{
+  height: 100%;
 }
 
 body {
+  margin: 0px;
+  padding: 10px;
+  /* a cool workaround to alter the color of a background image. A gradient between almost identical transparent blues is overlaid on the image */
+  background: linear-gradient(0deg, rgba(150, 180, 250, .75), rgba(19, 57, 139, 0.75)), url(../resources/pixil-frame-complex.png); /* made it myself! */
+  background-color: rgb(175, 200, 250); /* I.E. compatibility - Roughly equivalent color: X=255 - .75*(255-Y) */
+  background-attachment: fixed; /* don't let background scroll with content (distracting and repeated gradient is jarring)*/
+}
+
+.main-panel{
   font-size: 16px;
   margin: auto; 
   max-width: 1000px;
   padding: 50px;
-  /* -webkit-box-shadow: 10px 5px 15px 0px rgba(0,0,0,0.25); */
-  /* box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25); */
+  background-color: white;
+  border-radius: 5px;
 }
 
 figure {
-  padding: 4px;
+  width: max-content; /* allow figure to determine its width based on the width of its contents */
+  padding: 5px;
   margin: auto;
-  width: 850px;
+  box-shadow: 0px 0px 0px 0px black;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 figcaption {
@@ -30,13 +43,13 @@ figcaption {
 }
 
 .figure-image{
-  width: 100%;
+  width: 850px;
   height: 100%;
+  margin: auto;
   text-align: center;
-  display: flex;
-  -webkit-box-shadow: 10px 5px 15px 0px rgba(0,0,0,0.25);
-  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
-  margin-bottom: 15px;
+  display: flex; /* flex allows image to determine position based on text alignment */
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 .body-image{
@@ -44,10 +57,11 @@ figcaption {
   /* width: 100%; */
   /* height: 100%; */
   text-align: center;
-  display: flex;
-  -webkit-box-shadow: 10px 5px 15px 0px rgba(0,0,0,0.25);
+  display: flex; /* flex allows image to determine position based on text alignment */
+  box-shadow: 0px 0px 0px 0px black;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .notice-sign{
@@ -56,11 +70,8 @@ figcaption {
   border-style: solid;
   border-width: 5px;
   border-radius: 10px;
-  -webkit-box-shadow: 10px 5px 15px 0px rgba(0,0,0,0.25);
-  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
   font-size: 12px;
-  margin: 0 auto;
-  margin-bottom: 15px;
+  margin: 0 auto 5px; /* left and right margin is automatic. Top 0. Bottom 5px */
   max-width: 230px;
   text-align: left;
 }
