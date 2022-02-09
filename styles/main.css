@@ -1,38 +1,177 @@
+/* color scheme https://coolors.co/ffc914-33658a-1ca9c9-28112b-dc602e */
+
 /*apply to all elements */
 * { 
-  font-family: Arial, sans-serif;
   box-sizing: border-box;   /* make elements use border-box model */
 }
-html{
+html {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Rubik, Arial, sans-serif;
+  overflow-y:scroll; /* make scrollbar visible on all pages for consistent viewing */
 }
 
 body {
   margin: 0px;
-  padding: 5px;
+  padding: 0px 0px 5px 0px;
   /* a cool workaround to alter the color of a background image. A gradient between almost identical transparent blues is overlaid on the image */
-  background: linear-gradient(0deg, rgba(150, 180, 250, 0.75), rgba(19, 57, 139, 0.75)), url(../resources/pixil-frame-complex.png); /* made it myself! */
-  background-color: rgb(175, 200, 250); /* I.E. compatibility - Roughly equivalent color: X=255 - .75*(255-Y) */
+  /* background: linear-gradient(0deg, rgba(150, 180, 250, 0.75), rgba(19, 57, 139, 0.75)), url(../resources/pixil-frame-complex.png); */
+  background-color: rgb(40, 135, 170); /* I.E. compatibility - Roughly equivalent color: X=255 - .75*(255-Y) */
+  background: linear-gradient(0deg, rgba(27, 166, 197, 0.75), rgba(37, 73, 101, 0.75)), url(../resources/pixil-frame-complex.png); /* made it myself! */
   background-attachment: fixed; /* don't let background scroll with content (distracting and repeated gradient is jarring)*/
 }
 
-.main-panel{
-  margin: auto; 
-  padding: 0;
+header {
+  position: relative; 
+  width: 75%;
   max-width: 1000px;
+  height: 110px;
+  margin: auto;
+  padding: 0px;
+}
+
+.banner{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between; /* seperate inline children to opposite sides */
+  background-color: #EE9521;
+  background-position: top;
+  background-size: 100% 100%;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
+  border-radius: 5px 5px 0px 0px;
+}
+
+#page-title{
+  margin-left: 1vw;
+  padding: 0px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.icon-link{
+  margin-right: 1vw;
+  padding: 0px;
+  color: #28112B;
+  text-decoration: none;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
+}
+
+/* change color and remove drop shadow on icon hover */
+.icon-link:hover {
+  color: #FFC914;
+  filter: drop-shadow(0px 0px 0px rgba(0,0,0,0.25));
+}
+
+.menu {
+  position: relative;
+  top: 60px;
+  margin: 0px;
+  padding: 0px;
+  z-index: 1;
+}
+
+/* apply to direct ul children of .menu */
+.menu > ul {
+  width: 80%;
+  max-width: 1000px;
+  height: 400px; /* small hack to ensure dropdowns are not hidden. Only the top 50px is visible. 400px fits up to 3 dropdown items */
+  margin: auto;
+  padding: 0px;
+  list-style-type: none;
+  overflow: hidden; /* hide content that is too big for it's box */
+  display: flex;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
+}
+
+/* apply only to nav tab li elements */
+.menu > ul > li{
+  width: 25%;
+}
+
+li{
+  position: relative; /* li needs to be relative for child ul to enable overflow hiding */
+  width: 100%;
+}
+
+li a {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  display: block;
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: #28112B;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.dropdown{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 0px;
+  list-style-type: none;
+  overflow-y: hidden;
+  display: none;
+  z-index: 999;
+}
+
+.dropdown a{
+  color: white;
+  font-size: 1rem;
+  border-radius: 0px 0px 0px 0px;
+}
+
+/* apply to the last list element in dropdown */
+.dropdown li:last-child > a{
+  border-radius: 0px 0px 10px 10px;
+}
+
+/* applies to dropdown on menu link hover as well as when hovering over the dropdown menu */
+.menu ul li a:hover + .dropdown, .dropdown:hover{
+  display: block; /* Display the dropdown */
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #FFC914;
+}
+
+/* let the user know which page they are on */
+.active {
+  background-color: #DC602E;
+}
+
+.main-panel{
+  width: 75%;
+  max-width: 1000px;
+  margin: auto; 
+  padding: 0px;
 }
 
 .body-section{
-  margin: 10px auto 10px; 
+  margin: 0px auto 10px; 
   padding: 50px;
   font-size: 16px;
   background-color: white;
   border-radius: 5px;
 }
 
+.body-section:first-child{ /* only applies to the first body section element */
+  border-radius: 0px 0px 5px 5px;
+}
+
 .body-image{
   margin: auto;
-  /* width: 100%; */
+  width: 70%; /* image width is set to 70% of view width */
   /* height: 100%; */
   text-align: center;
   display: flex; /* flex allows image to determine position based on text alignment */
@@ -43,13 +182,16 @@ body {
 }
 
 figure {
-  width: max-content; /* allow figure to determine its width based on the width of its contents */
   padding: 5px;
   margin: auto;
   box-shadow: 0px 0px 0px 0px black;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   border-radius: 5px;
+}
+
+.small-figure{
+  width: max-content; /* allows the figure box to be the size of its content */
 }
 
 figcaption {
@@ -60,11 +202,10 @@ figcaption {
 }
 
 .figure-image{
-  width: 850px;
+  width: 100%; /* image width is set to 75% of view width */
   height: 100%;
   margin: auto;
   text-align: center;
-  display: flex; /* flex allows image to determine position based on text alignment */
   margin-bottom: 5px;
   border-radius: 5px;
 }
@@ -95,4 +236,12 @@ figcaption {
   text-align: right;
   padding: 10px, 10px, 0px, 10px;
   margin: 3px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.14rem;
 }
