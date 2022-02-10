@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/c3de28a841.js" crossorigin="anonymous"></script>
+    <title>On Positioning</title>
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <span id="page-title">DK's Dev Blog</span>
+        <span id="header-icons">
+          <a target="_blank" href="https://www.linkedin.com/in/david-kavenga-369548231/" class="icon-link">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a target="_blank" href="https://discordapp.com/users/940856965981171752/" class="icon-link">
+            <i class="fa-brands fa-discord"></i>
+          </a>
+          <a target="_blank" href="https://github.com/david-kavenga" class="icon-link">
+            <i class="fa fa-github"></i>
+          </a>
+        </span>
+      </div>
+      <nav class="menu">
+        <ul class="menu-list">
+          <li><a href="../index.html">Home</a></li>
+          <li>
+            <a href="#" class="active">Blog <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+              <li><a href="identity-values.html">Identity & Values</a></li>
+              <li><a href="learning-plan.html">Learning Plan</a></li>
+              <li><a href="html-css.html">On Positioning</a></li>
+            </ul>
+          </li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="main-panel">
+      <section class="body-section">
+        <h2>Element Positioning: A CSS Tech exploration</h2>
+        <p>
+          This page explores the CSS position attributes of relative, absolute and fixed.
+        </p>
+        <p>
+          When building websites, the box-model gives a lot of clarity when thinking about how different elements are positioned. A tag, or element usually contains its children (i.e. elements inside it).
+        </p>
+        <p>
+          Let's look at an example:
+        </p>
+        <img class="body-image" src="images/Positioning1.png" alt="Basic HTML illustration">
+        <p>
+          This code has four <code>div</code> elements. The <code>div</code> encompassing all the others has an id of <em>A</em>. Inside it are <em>B</em> and <em>C</em>. Finally, within C is <code>div</code> <em>D</em>. We can think of A as the <em>parent</em> of B and C. It is also the <em>grandparent</em> of D. This becomes important later.
+        </p>
+        <p>
+          Without some CSS, it's hard to see how they might be represented, so let's give the elements some basic properties:
+        </p>
+        <img class="body-image" src="images/Positioning2.png" alt="Basic CSS illustration">
+        <p>
+          We make A grey and the biggest at 300x300 pixels. B is red and 200X100. Next is C, the same size but blue. Lastly, D is the smallest at 100x50 pixels and coloured green.
+        </p>
+        <p>
+          This is the result:
+        </p>
+        <img class="body-image" src="images/Positioning3.png" alt="Basic webpage illustration">
+        <p>
+          As expected, our <code>div</code> elements are all the correct sizes. Because A is the encompassing element, it is drawn to the page first, and therefore under the others. Next B and C are drawn. Notice that they respect the box-model and are placed one after the other with no overlap. Lastly D is overlaid on C, because it is the <em>child</em> of C. Normally this is great, but there may be circumstances where we want to define positioning outside of the regular model.
+        </p>
+        <h2>Relative positioning</h2>
+        <p>
+          So, what if we wanted to move the blue box (C) down 50 pixels. Would D move too? We could add a blank <code>div</code> in between it and the red box, but let's use <code>position: relative;</code> and specify a distance to move it instead.
+        </p>
+        <img class="body-image" src="images/Positioning4.png" alt="Position: relative illustration">
+        <p>
+          Cool! Let's explore what happened. We told C to make it's position relative. In this case, relative to where it should be (as it was in our initial render above). <code>top: 50px;</code> tells C to imagine there are 50 blank pixels above it after B. We could also use <code>left:</code> to move C right, etc.
+        </p>
+        <p>
+          Another observation to make is that our green box (D) also moved with C. Why? Because it is a child of C. If we think of C as a container, D is inside it. Makes sense, right?
+        </p>
+        <h2>Absolute positioning</h2>
+        <p>
+          Now we've arrived at our next experiment: <code>position: absolute;</code> Unlike relative positioning, absolute positioning allows an element to position as if it is starting from the parent's <em>origin</em>, but other children of the parent behave as if it doesn't exist.
+        </p>
+        <img class="body-image" src="images/Positioning5.png" alt="Position: absolute illustration 1">
+        <p>
+          We told B to <code>position: relative;</code> and move horizontally 350pixels, but C still remains at the same vertical position as it was before. In other words, C still respects D's original positioning. We can change that with <code>position: absolute;</code>
+        </p>
+        <img class="body-image" src="images/Positioning6.png" alt="Position: absolute illustration 2">
+        <p>
+          Now C positions as if it is the only child of A. B is in effect, free from the parent-child position heirachy. We can do interesting things with this knowledge, like overlap B and C, or even draw B on top of C.
+        </p>
+        <img class="body-image" src="images/Positioning7.png" alt="Position: absolute illustration 3">
+        <p>
+          With a trick using the property <code>z-index: 1;</code> we can effectively tell B to put itself over C. C and D still both exist, but because they aren't respecting B's position in the heirachy, they don't get out of its way.
+        </p>
+        <h2>Fixed positioning</h2>
+        <p>
+          Unlike relative and absolute positioning, fixed position elements don't determine their place from their parents or grandparents. They are placed relative to the viewport of the browser window itself. In effect, they don't move even when the page is scrolled. The background of this page is fixed. Actually, the hammer is also a fixed element that has been on the page the whole time.
+        </p>
+        <p>
+          To determine where a fixed element is placed, simply use the properties <code>top:</code> <code>bottom:</code> <code>left:</code> and <code>right:</code>. For example, the hammer uses <code>bottom: 5px; right: 5px;</code> to be placed in bottom right corner of the viewport.
+        </p>
+        <h2>Try it yourself!</h2>
+        <p class="codepen" data-height="400" data-theme-id="dark" data-default-tab="css,result" data-slug-hash="PoOmGzZ" data-editable="true" data-user="david-kavenga" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/david-kavenga/pen/PoOmGzZ">
+          Absolute, Relative and Fixed positioning.</a> by David Kavenga (<a href="https://codepen.io/david-kavenga">@david-kavenga</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+      </section>
+    </div>
+    <figure class="small-figure" id="fixit">
+      <span class="text-icon"><i class="fa-solid fa-hammer"></i></span>
+      <figcaption>I'm fixed!</figcaption>
+    </figure>
+  </body>
+</html>
