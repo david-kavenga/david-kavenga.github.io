@@ -306,12 +306,12 @@ h2 {
 }
 
 h3 {
-  font-size: calc(1.8 * var(--body-font));
+  font-size: calc(1.6 * var(--body-font));
   word-wrap: break-word;
 }
 
 h4 {
-  font-size: calc(1.5 * var(--body-font));
+  font-size: calc(1.3 * var(--body-font));
   word-wrap: break-word;
 }
 
