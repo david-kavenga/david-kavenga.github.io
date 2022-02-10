@@ -1,9 +1,68 @@
 /* color scheme https://coolors.co/ffc914-33658a-1ca9c9-28112b-dc602e */
 
+/* set up variables for media scaling sizes */
+:root {
+	--multiplier: 1;
+  --headings-multiplier: 1;
+  --spacings-multiplier: 1;
+  --body-font: 3.5vw;
+  --banner-font: 6vw;
+}
+
+/* applies to all devices larger than 320px */
+@media (min-width: 320px) {
+  :root {
+		--multiplier: 1.1;
+    --headings-multiplier: 1.2;
+    --spacings-multiplier: 1.2;
+    --body-font: calc(1.14rem * 0.5 * var(--headings-multiplier));
+    --banner-font: calc(2rem * 0.5 * var(--headings-multiplier));
+	}
+
+  .small-figure{
+    width: max-content; /* allows the figure box to be the size of its content on larger screens */
+  }
+}
+
+/* applies to all devices larger than 480px */
+@media (min-width: 480px) {
+  :root {
+		--multiplier: 1.5;
+    --headings-multiplier: 1.5;
+    --spacings-multiplier: 1.5;
+	}
+
+  .menu > ul{
+    width: 80%;
+  }
+
+  li > .dropdown a{
+    height: 50px;
+  }
+}
+
+/* applies to all devices larger than 768px */
+@media (min-width: 768px) {
+	:root {
+		--multiplier: 2;
+    --headings-multiplier: 2;
+    --spacings-multiplier: 2;
+	}
+
+  .body-section > .body-image{
+    width: 75%;
+  }
+
+  section > p {
+    word-wrap: normal;
+  }
+}
+
 /*apply to all elements */
 * { 
   box-sizing: border-box;   /* make elements use border-box model */
 }
+
 html {
   height: 100%;
   margin: 0;
@@ -13,7 +72,6 @@ html {
 }
 
 body {
-  margin: 0px;
   padding: 0px 0px 5px 0px;
   /* a cool workaround to alter the color of a background image. A gradient between almost identical transparent blues is overlaid on the image */
   /* background: linear-gradient(0deg, rgba(150, 180, 250, 0.75), rgba(19, 57, 139, 0.75)), url(../resources/pixil-frame-complex.png); */
@@ -24,22 +82,22 @@ body {
 
 header {
   position: relative; 
-  width: 75%;
+  width: calc(100vw - 5vw * var(--multiplier)); /* as the view gets bigger, multiplier increases and width increases with diminishing returns until at 1000px */
   max-width: 1000px;
-  height: 110px;
+  height: calc(55px * var(--multiplier));
   margin: auto;
-  padding: 0px;
+  font-size: 24px; /* backup definition for less compatible browsers */
 }
 
 .banner{
   position: absolute;
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 10px;
+  padding: calc(5px * var(--multiplier));
   text-align: left;
   display: flex;
   justify-content: space-between; /* seperate inline children to opposite sides */
+  align-items: flex-start;
   background-color: #EE9521;
   background-position: top;
   background-size: 100% 100%;
@@ -49,16 +107,19 @@ header {
 
 #page-title{
   margin-left: 1vw;
-  padding: 0px;
-  font-size: 2rem;
+  font-size: calc(1 * var(--banner-font));
   font-weight: 600;
+}
+
+#header-icons{
+  font-size: calc(1.25 * var(--banner-font));
 }
 
 .icon-link{
   margin-right: 1vw;
-  padding: 0px;
   color: #28112B;
   text-decoration: none;
+  font-size: calc(1.25* var(--banner-font));
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
 }
 
@@ -70,15 +131,13 @@ header {
 
 .menu {
   position: relative;
-  top: 60px;
-  margin: 0px;
-  padding: 0px;
+  top: calc(30px * var(--multiplier));
   z-index: 1;
 }
 
 /* apply to direct ul children of .menu */
-.menu > ul {
-  width: 80%;
+.menu-list {
+  width: 100%;
   max-width: 1000px;
   height: 400px; /* small hack to ensure dropdowns are not hidden. Only the top 50px is visible. 400px fits up to 3 dropdown items */
   margin: auto;
@@ -96,16 +155,15 @@ header {
 
 li{
   position: relative; /* li needs to be relative for child ul to enable overflow hiding */
-  width: 100%;
 }
 
 li a {
-  width: 100%;
-  height: 50px;
-  padding: 10px;
+  height: calc(25px * var(--multiplier));
+  padding: calc(5px * var(--spacings-multiplier));
   display: block;
   color: white;
-  font-size: 1.4rem;
+  font-size: calc(2rem * 0.40 * var(--headings-multiplier));
+  font-size: calc(1.4*var(--body-font));
   text-align: center;
   text-decoration: none;
   background-color: #28112B;
@@ -115,18 +173,17 @@ li a {
 .dropdown{
   position: absolute;
   width: 100%;
-  height: 100%;
-  margin: auto;
   padding: 0px;
   list-style-type: none;
-  overflow-y: hidden;
-  display: none;
-  z-index: 999;
+  display: none;  /* dropdown menu is hidden until needed */
+  z-index: 1;
 }
 
 .dropdown a{
+  height: calc(30px * var(--multiplier));
   color: white;
-  font-size: 1rem;
+  font-size: calc(1.8rem * 0.3 * var(--headings-multiplier));
+  font-size: calc(1*var(--body-font));
   border-radius: 0px 0px 0px 0px;
 }
 
@@ -151,17 +208,18 @@ li a:hover {
 }
 
 .main-panel{
-  width: 75%;
+  width: calc(100vw - 5vw * var(--multiplier)); /* same as header */
   max-width: 1000px;
   margin: auto; 
-  padding: 0px;
 }
 
 .body-section{
   margin: 0px auto 10px; 
-  padding: 50px;
-  font-size: 16px;
+  padding: calc(2.5vw * var(--spacings-multiplier)) calc(5vw * var(--spacings-multiplier)); /* vertical padding is half of horizontal */
+  font-size: 16px; /* fallback applies to all child elements of section if variables fail */
   background-color: white;
+  box-shadow: 0px 0px 0px 0px black;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
   border-radius: 5px;
 }
 
@@ -171,9 +229,7 @@ li a:hover {
 
 .body-image{
   margin: auto;
-  width: 70%; /* image width is set to 70% of view width */
-  /* height: 100%; */
-  text-align: center;
+  width: 80%; /* image width is set to 80% of view width */
   display: flex; /* flex allows image to determine position based on text alignment */
   box-shadow: 0px 0px 0px 0px black;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
@@ -182,7 +238,6 @@ li a:hover {
 }
 
 figure {
-  padding: 5px;
   margin: auto;
   box-shadow: 0px 0px 0px 0px black;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
@@ -190,58 +245,36 @@ figure {
   border-radius: 5px;
 }
 
-.small-figure{
-  width: max-content; /* allows the figure box to be the size of its content */
-}
-
 figcaption {
+  padding: 5px;
   color: rgb(0, 0, 0);
   font-style: italic;
-  padding: 2px;
+  font-size: var(--body-font);
   text-align: center;
+  word-wrap: break-word;
 }
 
 .figure-image{
-  width: 100%; /* image width is set to 75% of view width */
+  width: 100%;
   height: 100%;
   margin: auto;
-  text-align: center;
-  margin-bottom: 5px;
   border-radius: 5px;
 }
 
-.notice-sign{
-  background-color: whitesmoke;
-  border-color: darkblue;
-  border-style: solid;
-  border-width: 5px;
-  border-radius: 10px;
-  font-size: 12px;
-  margin: 0px auto 5px; /* left and right margin is automatic. Top 0. Bottom 5px */
-  max-width: 230px;
-  text-align: left;
-}
-
-.sign-blue-text{
-  color: darkblue;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 0px, 10px, 0px, 10px;
-  margin: 5px;
-}
-
-.sign-black-text{
-  color: black;
-  font-weight: 550;
-  text-align: right;
-  padding: 10px, 10px, 0px, 10px;
-  margin: 3px;
+.text-icon{
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-size: calc(7 * var(--body-font));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: calc(2 * var(--body-font));
+  word-wrap: break-word;
 }
 
 p {
-  font-size: 1.14rem;
+  font-size: var(--body-font);
+  word-wrap: break-word;
 }
