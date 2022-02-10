@@ -5,7 +5,8 @@
 	--multiplier: 1;
   --headings-multiplier: 1;
   --spacings-multiplier: 1;
-  --body-font: 3.5vw;
+  --body-font: 6vw;
+  --dropdown-font: 3.5vw;
   --banner-font: 6vw;
 }
 
@@ -15,8 +16,9 @@
 		--multiplier: 1.1;
     --headings-multiplier: 1.2;
     --spacings-multiplier: 1.2;
-    --body-font: calc(1.14rem * 0.5 * var(--headings-multiplier));
+    --body-font: calc(1rem + 0.2rem * var(--headings-multiplier));
     --banner-font: calc(2rem * 0.5 * var(--headings-multiplier));
+    --dropdown-font: calc(1.8rem * 0.3 * var(--headings-multiplier));
 	}
 
   .small-figure{
@@ -50,7 +52,7 @@
 	}
 
   .body-section > .body-image{
-    width: 75%;
+    width: 90%;
   }
 
   section > p {
@@ -163,7 +165,7 @@ li a {
   display: block;
   color: white;
   font-size: calc(2rem * 0.40 * var(--headings-multiplier));
-  font-size: calc(1.4*var(--body-font));
+  font-size: calc(1.5*var(--dropdown-font));
   text-align: center;
   text-decoration: none;
   background-color: #28112B;
@@ -183,7 +185,7 @@ li a {
   height: calc(30px * var(--multiplier));
   color: white;
   font-size: calc(1.8rem * 0.3 * var(--headings-multiplier));
-  font-size: calc(1*var(--body-font));
+  font-size: calc(1*var(--dropdown-font));
   border-radius: 0px 0px 0px 0px;
 }
 
@@ -240,7 +242,7 @@ p > a:hover{
 
 .body-image{
   margin: auto;
-  width: 80%; /* image width is set to 80% of view width */
+  width: 95%; /* image width is set to 95% of view width */
   display: flex; /* flex allows image to determine position based on text alignment */
   box-shadow: 0px 0px 0px 0px black;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
