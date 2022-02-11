@@ -210,7 +210,7 @@ li a:hover {
 }
 
 /* let the user know which page they are on */
-.active {
+.menu-list > li > .active { /* needs to be as specific as competing rule for a to override */
   background-color: #DC602E;
 }
 
