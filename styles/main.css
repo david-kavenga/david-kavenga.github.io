@@ -119,11 +119,15 @@ header {
 }
 
 .icon-link{
-  margin-right: 1vw;
+  margin: auto;
   color: #28112B;
   text-decoration: none;
-  font-size: calc(1.25* var(--banner-font));
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
+}
+
+#header-icons .icon-link{
+  margin-right: 1vw;
+  font-size: calc(1.25* var(--banner-font));
 }
 
 /* change color and remove drop shadow on icon hover */
@@ -214,6 +218,7 @@ li a:hover {
 p > a {
   position: relative;
   z-index: 100; /* prevent links from becoming covered and disabled */
+  text-decoration: none;
   color: #28112B;
 }
 
@@ -229,7 +234,7 @@ p > a:hover{
 
 .body-section{
   margin: 0px auto 10px; 
-  padding: min(1.5vw, calc(2.5vw * var(--spacings-multiplier))) min(4vw, calc(5vw * var(--spacings-multiplier))); /* vertical padding is half of horizontal both no more than 50px */
+  padding: min(1.5vw, calc(2.5vw * var(--spacings-multiplier))) min(4vw, calc(5vw * var(--spacings-multiplier))); /* vertical padding is half of horizontal both no more than 4vw */
   font-size: 16px; /* fallback applies to all child elements of section if variables fail */
   background-color: white;
   box-shadow: 0px 0px 0px 0px black;
@@ -249,6 +254,11 @@ p > a:hover{
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
   margin-bottom: 20px;
   border-radius: 5px;
+}
+
+.body-image-emoji{
+  width: calc(.8 * var(--body-font)); 
+  display: inline-block; /* displayed inline with text */
 }
 
 figure {
@@ -281,6 +291,33 @@ figcaption {
   text-align: center;
   font-size: calc(7 * var(--body-font));
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
+}
+
+.flex-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  row-gap: calc(10px * var(--spacings-multiplier));;
+  column-gap: calc(10px * var(--spacings-multiplier));
+  flex-flow: wrap;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+.cell{
+  width: calc(80px * var(--multiplier));
+  padding: calc(5px * var(--spacings-multiplier));
+  color:#FFC914;
+  font-size: calc(3*var(--body-font));
+  text-align: center;
+  box-shadow: 0px 0px 0px 0px black;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
+  border-radius: 5px;
+}
+
+/* If you want text inside of the container */
+.cell > a span {
+  font-size: calc(.75 * var(--body-font));
 }
 
 #fixit {
@@ -323,6 +360,8 @@ p {
 
 code {
   padding: 1px;
+  position: relative;
+  bottom: 2px; /* adjusts the code to appear slightly higher */
   font-size: calc(0.75*var(--body-font));
   background-color: rgb(240, 240, 240);
   box-shadow: 0px 0px 0px 0px black;
