@@ -160,11 +160,11 @@ header {
   width: 25%;
 }
 
-li{
+.menu > ul > li, .menulist > li{
   position: relative; /* li needs to be relative for child ul to enable overflow hiding */
 }
 
-li a {
+.menu-list > li > a, .dropdown a { 
   height: calc(25px * var(--multiplier));
   padding: calc(5px * var(--spacings-multiplier));
   display: block;
@@ -236,6 +236,7 @@ p > a:hover{
   margin: 0px auto 10px; 
   padding: min(1.5vw, calc(2.5vw * var(--spacings-multiplier))) min(4vw, calc(5vw * var(--spacings-multiplier))); /* vertical padding is half of horizontal both no more than 4vw */
   font-size: 16px; /* fallback applies to all child elements of section if variables fail */
+  font-size: var(--body-font);
   background-color: white;
   box-shadow: 0px 0px 0px 0px black;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
@@ -354,7 +355,13 @@ h4 {
 }
 
 p {
-  font-size: var(--body-font);
+  font-size:  calc(1 *var(--body-font));
+  word-wrap: break-word;
+}
+
+.body-section > ul, .body-section > ol {
+  padding-inline-start: calc(15px * var(--multiplier));
+  font-size:  calc(0.9 * var(--body-font));
   word-wrap: break-word;
 }
 
