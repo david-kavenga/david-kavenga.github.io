@@ -146,11 +146,11 @@ header {
 .menu-list {
   width: 100%;
   max-width: 1000px;
-  height: 300px; /* small hack to ensure dropdowns are not hidden. Only the top 50px is visible. 400px fits up to 3 dropdown items */
+  /* height: 300px; small hack to ensure dropdowns are not hidden. Only the top 50px is visible. 400px fits up to 3 dropdown items */
   margin: auto;
   padding: 0px;
   list-style-type: none;
-  overflow: hidden; /* hide content that is too big for it's box */
+  /* overflow: hidden;  hide content that is too big for it's box */
   display: flex;
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
 }
@@ -217,7 +217,7 @@ li a:hover {
 /* apply to all body links */
 p > a {
   position: relative;
-  z-index: 100; /* prevent links from becoming covered and disabled */
+  /* z-index: 100;  prevent links from becoming covered and disabled */
   text-decoration: none;
   color: #28112B;
 }
