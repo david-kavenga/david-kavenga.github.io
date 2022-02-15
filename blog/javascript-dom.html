@@ -57,23 +57,61 @@
         <p>
           On a webpage, CSS is in charge of the presentation. In our classroom, we want to set some rules for how things look, so that parents and members of the community see the value of our school. We might decide what color to paint the walls or whether to use plastic or wooden desks. Are desks in clusters or in a grid? How about the students. It's a bit messy for them to turn up in mufti every day. How about they wear a season-appropriate uniform? Of course, the teacher has presentation rules they need follow too. This is all styling, we create rules for presentation our class the same way CSS creates rules for presentation of a webpage.
         </p>
+      </section>
+      <section class="body-section">
+        <h3>Control flow</h3>
+        <p><em>javascript</em>, like many programming languages observes something called a <em>control flow</em> which basically defines the order in which things are done, so that they remain (mostly) predictable.</p>
+        <p>
+          What were the steps of the bathroom routine at school? Perhaps something like:
+        </p>
+        <ol>
+          <li><code>Put your hand up.</code></li>
+          <li><code>Wait for the teacher's acknowledgement.</code></li>
+          <li><code>Go to the bathroom.</code></li>
+          <li><code>Wash your hands.</code></li>
+          <li><code>Come back to the rest of the class.</code></li>
+        </ol>
+        <p>
+          Pretty straightforward, but you'd agree that each step only makes sense if done in that order, right? No point in putting your hand up last, or washing your hands before you go to the bathroom (probably). 
+        </p>
+        <p>
+          For most programming languages, instructions are carried out first to last. We usually decide that the order matters just as much as the procedure above. Things often don't make sense if done out of order. However, there are some special tools that allow us to do more complex procedures.
+        </p>
+        <h3>Loops</h3>
+        <p>
+          One of the most useful features to alter the control flow is a <em>loop</em>. These are perfect for doing a bunch of things in a repeating fashion. What was the procedure for entering your classroom after lunch? Often, in my primary school and intermediate we lined up and were let in one-by-one. Probably there isn't enough complexity there to require a loop, but what if our teacher wanted to interact with each of us before we entered? I've seen awesome videos of teachers using a different secret hand-shake for each student. Perhaps for the teacher that entrance procedure might look like this:
+        </p>
+        <ol>
+          <li><code>Line class up.</code></li>
+          <li><code>Do a secret handshake with each student.</code></li>
+          <li><code>Enter the classroom yourself</code></li>
+        </ol>
+        <p>
+          Cool, but is step 2 really a single step? Not so much, it's probably a loop! The loop could go something like this:
+        </p>
+        <ol>
+          <li><code>Recognise student.</code></li>
+          <li><code>Remember that student's handshake.</code></li>
+          <li><code>Execute handshake flawlessly!</code></li>
+          <li><code>Send that student into the classroom.</code></li>
+        </ol>
+        <p>
+          So perhaps step 2 of the entrance procedure is actually many steps. We still do each step in order, but a loop can save us from writing each step for every single student. Of course, in real life, we often automatically use loops. I hope you can see they are definitely worth using when it comes to programming.
+        </p>
+      </section>
+      <section class="body-section">
         <h3>The DOM</h3>
         <p>
-          Continuing on with our earlier analogy, let's look at the DOM. However, this time we'll imagine we are Mrs Banner, the teacher. The principal might have decided the contents of the classroom and how it needs to look, but it's up to us to set some rules for smooth running day to day. We'll get back to this in a second.
+          Continuing on with our classroom analogy, let's look at the DOM. However, this time we'll imagine we are the teacher. The principal might have decided the contents of the classroom and how it needs to look, but it's up to us to set some rules for smooth running day to day. We'll get back to this in a second.
         </p>
         <p>
           The <em>DOM</em> stands for <em>Document Object Model</em>. It's basically a certain way of looking at a webpage that allows for greater control. Everything on a web-page defined in HTML isn't just a mark-up to tell your browser what's what, they are actual objects!
         </p>
         <p>
-          Thinking about our classroom, it isn't much of a revelation to say "those desks are objects". We know that. But for a webpage it opens up many possibilities. If we know every piece of the HTML Document is an object, we can manipulate those outside of the HTML. Change properties, define interactions etc.
+          Thinking about our classroom, it isn't much of a revelation to say "those desks are objects". We know that. However, for a webpage it opens up many possibilities. If we know every piece of the HTML Document is an object, we can manipulate those outside of the HTML. Change properties, define interactions etc. Ever see a webpage do something interesting when you clicked a button? Chances are those things were defined using javascript and the DOM
         </p>
         <p>
-          Do you remember what your Year 1 teacher's rules were for going to the bathroom? Perhaps something like <code>1. Put your hand up.</code> <code>2. Wait for the teacher's acknowledgement.</code> <code>3. Go to the bathroom.</code> <code>4. Wash your hands.</code> <code>5. Come back to the rest of the class</code>. Your teacher didn't necessarily know who would want to go to the bathroom on any given day, but the procedure was well established, because there was a good possibility it would happen. That's exactly the way we want to use Javascript and the DOM.
-        </p>
-      </section>
-      <section class="body-section">
-        <p>
-          
+          Do you remember what your primary school teacher's rules were for going to the bathroom? Your teacher didn't necessarily know who would want to go to the bathroom on any given day, or at any given time, but the procedure was well established, because there was a good possibility it would happen. That's exactly the way we want to use Javascript and the DOM. Knowing we can change aspects of the page upon certain events let's our webpage be truly interactive.
         </p>
       </section>
     </div>
