@@ -359,6 +359,16 @@ h5 {
   word-wrap: break-word;
 }
 
+h6 {
+  font-size: calc(1.05 * var(--body-font));
+  word-wrap: break-word;
+}
+
+/* for all h6s in a list */
+li > h6 {
+  display: inline;
+}
+
 p {
   font-size:  calc(1 *var(--body-font));
   word-wrap: break-word;
