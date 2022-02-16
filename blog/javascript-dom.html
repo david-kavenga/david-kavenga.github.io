@@ -62,7 +62,7 @@
         <h3>Control flow</h3>
         <p><em>javascript</em>, like many programming languages observes something called a <em>control flow</em> which basically defines the order in which things are done, so that they remain (mostly) predictable.</p>
         <p>
-          What were the steps of the bathroom routine at school? Perhaps something like:
+          Think back to your childhood. What were the steps of the bathroom routine at your school? Perhaps something like:
         </p>
         <ol>
           <li><code>Put your hand up.</code></li>
@@ -75,7 +75,7 @@
           Pretty straightforward, but you'd agree that each step only makes sense if done in that order, right? No point in putting your hand up last, or washing your hands before you go to the bathroom (probably). 
         </p>
         <p>
-          For most programming languages, instructions are carried out first to last. We usually decide that the order matters just as much as the procedure above. Things often don't make sense if done out of order. However, there are some special tools that allow us to do more complex procedures.
+          For most programming languages, instructions are carried out first to last, or top to bottom. We usually decide that the order matters just as much as the procedure above. Things often don't make sense if done out of order. However, there are some special tools that allow us to do more complex procedures.
         </p>
         <h3>Loops</h3>
         <p>
@@ -87,31 +87,17 @@
           <li><code>Enter the classroom yourself</code></li>
         </ol>
         <p>
-          Cool, but is step 2 really a single step? Not so much, it's probably a loop! The loop could go something like this:
+          Cool, but is step 2 really a single step? Not so much. It probably involves many smaller steps. Something like this:
         </p>
         <ol>
           <li><code>Recognise student.</code></li>
           <li><code>Remember that student's handshake.</code></li>
           <li><code>Execute handshake flawlessly!</code></li>
           <li><code>Send that student into the classroom.</code></li>
+          <li><code>Repeat.</code></li>
         </ol>
         <p>
-          So perhaps step 2 of the entrance procedure is actually many steps. We still do each step in order, but a loop can save us from writing each step for every single student. Of course, in real life, we often automatically use loops. I hope you can see they are definitely worth using when it comes to programming.
-        </p>
-      </section>
-      <section class="body-section">
-        <h3>The DOM</h3>
-        <p>
-          Continuing on with our classroom analogy, let's look at the DOM. However, this time we'll imagine we are the teacher. The principal might have decided the contents of the classroom and how it needs to look, but it's up to us to set some rules for smooth running day to day. We'll get back to this in a second.
-        </p>
-        <p>
-          The <em>DOM</em> stands for <em>Document Object Model</em>. It's basically a certain way of looking at a webpage that allows for greater control. Everything on a web-page defined in HTML isn't just a mark-up to tell your browser what's what, they are actual objects!
-        </p>
-        <p>
-          Thinking about our classroom, it isn't much of a revelation to say "those desks are objects". We know that. However, for a webpage it opens up many possibilities. If we know every piece of the HTML Document is an object, we can manipulate those outside of the HTML. Change properties, define interactions etc. Ever see a webpage do something interesting when you clicked a button? Chances are those things were defined using javascript and the DOM.
-        </p>
-        <p>
-          Do you remember what your primary school teacher's rules were for going to the bathroom? Your teacher didn't necessarily know who would want to go to the bathroom on any given day, or at any given time, but the procedure was well established, because there was a good possibility it would happen. That's exactly the way we want to use Javascript and the DOM. Knowing we can change aspects of the page upon certain events let's our webpage be truly interactive, but also controllable.
+          Notice how we only specify how to interact with a single student, then repeat? This is a loop! We still do each step in order, but a loop can save us from writing each step for every single student. Of course, in real life we often automatically use loops. I hope you can agree they are definitely worth using when it comes to programming.
         </p>
       </section>
       <section class="body-section">
@@ -123,8 +109,10 @@
           The cool thing about arrays is we can use loops to check their values and interact with them, without having to write out those interactions for every single element. For example, thinking back to hand-shake loop we made earlier, we could easily imagine the line of students as an array of names. Maybe something like: <br><code>const students = ['Tom', 'Kaya', 'Greg', ...</code>
         </p>
         <p>
-          <em>Objects</em> are a little different in that they aren't a list of items, but are themselves items that have certain properties. If we wanted to make an object to represent a student, we might want to store their name, age, secret hand-shake, etc. If we wanted to then store the students in an array, we can do that too!
+          <em>Objects</em> are a little different in that they aren't a list of items, but are themselves items that have certain properties. If we wanted to make an object to represent a student, we might want to store their name, age, secret hand-shake, etc. If we wanted to then store the students in an array, we can do that too! Remember, in the DOM all the pieces of the document are actually objects. We can manipulate them the same as any objects we create.
         </p>
+      </section>
+      <section class="body-section">
         <h3>Functions</h3>
         <p>
           While control flow and loops are important tools, <em>functions</em> add even more flexibility to our javascript toolset. A function is a block of code that runs when you <em>call</em> it. Really, any set of instructions can be put in a function, even loops. What makes functions powerful is they can alter their behaviour based on parameters they are given. This can help you make your code easier to understand, as well as wrap up related tasks neatly.
@@ -145,7 +133,25 @@
           Say the next day the teacher again asks Hana "Could you please go get Andrew?" The steps for the task remain exactly the same, but this time Hana retrieves Andrew. Presumably Hana knows that whoever the teacher specifies is the person she needs to retrieve. We can think of Rian's and Andrew's names as parameters for our "retrieve student" function.
         </p>
         <p>
-          Often in programming languages parameters for functions are known as <em>arguments</em>. They can save us from needing to rewrite a function to do the same task with a different value (in this case person). The teacher could summon the whole school, one by one, by asking Hana to "retrieve student x" in a loop! Poor Hana.
+          Often in programming languages parameters for functions are known as <em>arguments</em>. They can save us from needing to rewrite a function to do the same task with a different value (in this case person). The teacher could summon the whole school, one by one, by asking Hana to "retrieve student x" in a loop. Poor Hana!
+        </p>
+      </section>
+      <section class="body-section">
+        <h3>The DOM</h3>
+        <p>
+          Continuing on with our classroom analogy from the start of this blog, let's look at the DOM. However, this time we'll imagine we are the teacher. The principal might have decided the contents of the classroom and how it needs to look, but it's up to us to set some rules for smooth running day to day. We'll get back to this in a second.
+        </p>
+        <p>
+          The <em>DOM</em> stands for <em>Document Object Model</em>. It's basically a certain way of looking at a webpage that allows for greater control. Everything on a web-page defined in HTML isn't just a mark-up to tell your browser what's what, they are actual objects! This includes, paragraphs, headings, buttons and so on.
+        </p>
+        <p>
+          Thinking about our classroom, it isn't much of a revelation to say "those desks are objects". We know that. However, for a webpage it opens up many possibilities. If we know every piece of the HTML Document is an object, we can manipulate those outside of the HTML. Change properties, define interactions etc. Ever see a webpage do something interesting when you clicked a button? Chances are those things were defined using javascript and the DOM.
+        </p>
+        <p>
+          Do you remember what your primary school teacher's rules were for going to the bathroom? Your teacher didn't necessarily know who would want to go to the bathroom on any given day, or at any given time, but they made sure procedure was well established, because there was a good possibility it would happen. That's exactly the way we want to use Javascript and the DOM.
+        </p>
+        <p> 
+          Knowing we can change aspects of the page upon certain events let's our webpage be truly interactive, and also controllable. Combine this knowledge with control flow, loops and functions and we can do almost anything!
         </p>
       </section>
     </div>
