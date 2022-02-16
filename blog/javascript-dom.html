@@ -55,7 +55,7 @@
           First, in every classroom we have the all important students. Looking at just this classroom, we have prepared an attendance sheet. We know there will be 20 students in the class as well as their names in some kind of order. We also know that we have assigned Mrs Banner to this classroom to teach. We organised for a whiteboard to be in the classroom and for each student to have a desk and chair they sit in. These decisions, believe it or not, are similar to HTML. We know what's in our classroom, the same way HTML knows what's on a webpage. How many, what type and extra details like names to keep track. The content is what's important.
         </p>
         <p>
-          On a webpage, CSS is in charge of the presentation. In our classroom, we want to set some rules for how things look, so that parents and members of the community see the value of our school. We might decide what color to paint the walls or whether to use plastic or wooden desks. Are desks in clusters or in a grid? How about the students. It's a bit messy for them to turn up in mufti every day. How about they wear a season-appropriate uniform? Of course, the teacher has presentation rules they need follow too. This is all styling. We create rules for presentation our class the same way CSS creates rules for presentation of a webpage.
+          On a webpage, CSS is in charge of the presentation. In our classroom, we want to set some rules for how things look, so that parents and members of the community see the value of our school. We might decide what color to paint the walls or whether to use plastic or wooden desks. Are desks in clusters or in a grid? How about the students? It's a bit messy for them to turn up in mufti every day. Let's say they can wear a season-appropriate uniform. Of course, the teacher has presentation rules they need follow too. This is all styling. We create rules for presentation our class the same way CSS creates rules for presentation of a webpage.
         </p>
       </section>
       <section class="body-section">
@@ -117,17 +117,35 @@
       <section class="body-section">
         <h3>Arrays and objects</h3>
         <p>
-          
+          These are the words we use to describe two different datastructures in javascript as well as many other programming languages. <em>Arrays</em> are collections of values. In javascript they look something like this: <br><code>const fruits = ['Apple', 'Banana']</code><br> Here they hold the names of fruit, but really, an array could hold almost any type of data.
         </p>
         <p>
-          
+          The cool thing about arrays is we can use loops to check their values and interact with them, without having to write out those interactions for every single element. For example, thinking back to hand-shake loop we made earlier, we could easily imagine the line of students as an array of names. Maybe something like: <br><code>const students = ['Tom', 'Kaya', 'Greg', ...</code>
+        </p>
+        <p>
+          <em>Objects</em> are a little different in that they aren't a list of items, but are themselves items that have certain properties. If we wanted to make an object to represent a student, we might want to store their name, age, secret hand-shake, etc. If we wanted to then store the students in an array, we can do that too!
         </p>
         <h3>Functions</h3>
         <p>
-          
+          While control flow and loops are important tools, <em>functions</em> add even more flexibility to our javascript toolset. A function is a block of code that runs when you <em>call</em> it. Really, any set of instructions can be put in a function, even loops. What makes functions powerful is they can alter their behaviour based on parameters they are given. This can help you make your code easier to understand, as well as wrap up related tasks neatly.
         </p>
         <p>
-          
+          If we were to think about how a teacher might use the real life equivalent of a function, I think it would be similar to delegating a task to a student. Let's say the teacher wants to summon a student from another classroom, but is too busy to do it themselves. Often, once students are responsible enough, this can be done by saying something like "Hey Hana, could you please go get Riaan?" Now, this might seem simple, but if we think about it there are a few steps involved:
+        </p>
+        <ol>
+          <li><code>Hana leaves the classroom.</code></li>
+          <li><code>Hana goes to Riaan's classroom.</code></li>
+          <li><code>Hana asks Riaan's teacher if he may leave.</code></li>
+          <li><code>Hana brings Riaan back to her classroom.</code></li>
+        </ol>
+        <p>
+          Of course, the teacher didn't have to tell Hana all that, it was implied by "go get Riaan". Hana had the set of steps in her mind after only hearing that instruction. In other words, through passive learning, or being purposefully taught in the past, she knew a function. We could potentially name this function something like "retrieve student".
+        </p>
+        <p>
+          Say the next day the teacher again asks Hana "Could you please go get Andrew?" The steps for the task remain exactly the same, but this time Hana retrieves Andrew. Presumably Hana knows that whoever the teacher specifies is the person she needs to retrieve. We can think of Rian's and Andrew's names as parameters for our "retrieve student" function.
+        </p>
+        <p>
+          Often in programming languages parameters for functions are known as <em>arguments</em>. They can save us from needing to rewrite a function to do the same task with a different value (in this case person). The teacher could summon the whole school, one by one, by asking Hana to "retrieve student x" in a loop! Poor Hana.
         </p>
       </section>
     </div>
