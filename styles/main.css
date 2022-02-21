@@ -218,7 +218,7 @@ li a:hover {
 p > a {
   position: relative;
   /* z-index: 100;  prevent links from becoming covered and disabled */
-  text-decoration: none;
+  text-decoration-thickness: 0.05em; 
   color: #28112B;
 }
 
@@ -278,6 +278,16 @@ figcaption {
   text-align: center;
   word-wrap: break-word;
 }
+
+figcaption > a {
+  text-decoration-thickness: 0.05em; 
+  color: #28112B;
+}
+
+figcaption > a:hover{
+  color: #FFC914;
+}
+
 
 .figure-image{
   width: 100%;
