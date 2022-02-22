@@ -8,10 +8,15 @@ I hope to provide a detailed run-down of website features and style choices as w
 - [Blog pages](#Blog-pages)
   * [Identity and Values](#identity-and-values)
   * [Learning Plan](#learning-plan)
-  * [Technical Blog](#technical-blog)
+  * [CSS: Positioning](#css-positioning)
+  * [Emotional Intelligence](#emotional-intelligence)
+  * [JS: Basics and The DOM](#js-basics-and-the-dom)
+  * [Neuroplasticity](#neuroplasticity)
+  * [Problem Solving](#problem-solving)
 - [Respect the Tech](#respect-the-tech)
   * [Hello Penguin](#im-taking-this-penguin)
-  * [Background](#there's-a-sea-in-my-bedroom)
+  * [Background](#theres-a-sea-in-my-bedroom)
+  * [Colour scheme](#on-colour)
 - [Site Planning](#site-planning)
 
 <br>
@@ -20,8 +25,42 @@ I hope to provide a detailed run-down of website features and style choices as w
 ## Blog pages
 ---
 ### Identity and values
+Further reading:
+  - [High5 Strengths Test](https://high5test.com/test/)
+  - [16 Personalities Test](https://www.16personalities.com/infp-personality) (Myers-Briggs Type Indicator)
+  - [The DOPE Test](https://high5test.com/test/)
+  - [Taka's 'Don't bother others' blogpost](https://note.com/g_2/n/naccf80cb2d48) (Japanese)
+
+---
 ### Learning Plan
-### Technical Blog
+
+---
+### CSS: Positioning
+
+---
+### Emotional Intelligence
+Further reading:
+  - [What you need to know](https://www.healthline.com/health/mental-health/time-for-some-self-reflection#Tips-for-self-reflection)
+  - [Emotional Intelligence in Leadership](https://www.mindtools.com/pages/article/newLDR_45.htm)
+  - [Emotional Intelligence and Myers-Briggs](https://ei4change.com/wp-content/uploads/2017/09/Emotional-Intelligence-and-the-MBTI.pdf)
+
+---
+### JS: Basics and The DOM
+
+---
+### Neuroplasticity
+Further reading:
+  - [Synaptic Pruning](https://www.pnas.org/content/117/28/16096)
+  - [Fixed vs. Growth: The Two Basic Mindsets That Shape Our Lives](https://www.themarginalian.org/2014/01/29/carol-dweck-mindset/)
+  - [The Habits of Successful People](https://buffer.com/resources/the-habits-of-successful-people-they-have-a-growth-mindset/)
+  - [MindSet Works](https://www.mindsetworks.com/science/)
+  - [Incorporating Growth Mindset](https://www.edutopia.org/article/incorporating-growth-mindset-into-teaching-practice-donna-wilson-marcus-conyers)
+
+---
+### Problem Solving
+Further reading:
+  - [Rubber Ducky Method](https://makersacademy.medium.com/what-is-rubber-duck-debugging-d3028d70a707#:~:text=Rubber%20duck%20debugging%20is%20a,%2Dline%2C%20to%20that%20duck.)
+  - [How to read error messages](https://www.gustavwengel.dk/googling-error-messages-1)
 
 <br>
 
@@ -34,7 +73,7 @@ Here we explore tricks used to create certain elements of the site.
 ### I'm taking this penguin
 
 A waving penguin used in part of the Responsive Web Development CSS intro course from freecodecamp.org.
-It is displayed on the index page using a small `<iframe>` with no border. The penguin itself is made using CSS and HTML, using CSS variables to provide an easy way to change colours.
+It is displayed on the demo page using a small `<iframe>` with no border. The penguin itself is made using CSS and HTML, using CSS variables to provide an easy way to change colours.
 
 ```CSS
 .right-hand {
@@ -74,7 +113,7 @@ This shows some of the key rules which dictate the movement of the penguin's rig
 
 ### *There's a Sea in my Bedroom*
 
-One of my first books. I've always loved the sea and one of my favorite pieces of art is *'The Great Wave'*. In Japan, I lived not too far from the famous *Naruto whirlpools* and found them fascinating. I wanted to bring these things together and make the sea a part of my site. After some time mucking around, and a few outright failures, I have a background I'm happy with (for now!). Here is some of the process behind it's creation.
+One of my first books. I've always loved the sea and one of my favourite pieces of art is *'The Great Wave'*. In Japan, I lived not too far from the famous *Naruto whirlpools* and found them fascinating. I wanted to bring these things together and make the sea a part of my site. After some time mucking around, and a few outright failures, I have a background I'm happy with (for now!). Here is some of the process behind it's creation.
 
 #### PixilArt
 
@@ -112,7 +151,7 @@ rgba(19, 57, 139, 0.75)),
 url(../resources/pixil-frame-complex.png); /* made it myself! */
 ```
 A few stages to break down:
-1. The `background` property allows for multiple images. These are automatically overlaid on top of each other. The last element goes on the bottom, second to last above that and so on.
+1. The `background` property allows for multiple images. These are automatically overlaid on top of each other. The last element goes on the bottom, second to last above that, and so on.
 2. `linear-gradient` takes two colours and a direction as arguments. CSS treats the result as an image.
 3. Because there are two 'images' in the background definition, it automatically overlays the gradient on the tile. Here the 'alpha' channel of the chosen colours becomes important. A solid colour gradient would completely cover anything underneath.
 4. The tile auto-repeats as if it was used individually, but the gradient fills the current container. In this case, the entire body box.
@@ -122,6 +161,12 @@ A few stages to break down:
 Magic :)
 
 Sadly, this trick might not be supported in internet explorer, so the site has a back-up background colour defined as well.
+
+<hr>
+
+### On colour
+
+
 
 <br>
 
