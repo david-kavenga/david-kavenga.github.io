@@ -25,6 +25,8 @@ I hope to provide a detailed run-down of website features and style choices as w
 ## Blog pages
 ---
 ### Identity and values
+An exploration of what makes me the person I am, and how it may impact my journey at EDA.
+
 Further reading:
   - [High5 Strengths Test](https://high5test.com/test/)
   - [16 Personalities Test](https://www.16personalities.com/infp-personality) (Myers-Briggs Type Indicator)
@@ -33,12 +35,16 @@ Further reading:
 
 ---
 ### Learning Plan
+How I intend to operate within the context of the Dev Academy Foundations and Bootcamp Programme. Negotiated with peers and facillitators.
 
 ---
 ### CSS: Positioning
+A tutorial on using various positioning types in CSS and how to manipulate elements with them.
 
 ---
 ### Emotional Intelligence
+A short study on EQ and small reflection of how it impacts my learning at EDA
+
 Further reading:
   - [What you need to know](https://www.healthline.com/health/mental-health/time-for-some-self-reflection#Tips-for-self-reflection)
   - [Emotional Intelligence in Leadership](https://www.mindtools.com/pages/article/newLDR_45.htm)
@@ -46,9 +52,12 @@ Further reading:
 
 ---
 ### JS: Basics and The DOM
+An overview of JavaScript and the DOM in a non-technical frame. How I see the interactions between HTML, CSS, JS and the DOM.
 
 ---
 ### Neuroplasticity
+Another short study, this time one Neuroplasticity and the Growth Mindset. I reflect on what this means for my learning and how it relates to my previously created Learning plan.
+
 Further reading:
   - [Synaptic Pruning](https://www.pnas.org/content/117/28/16096)
   - [Fixed vs. Growth: The Two Basic Mindsets That Shape Our Lives](https://www.themarginalian.org/2014/01/29/carol-dweck-mindset/)
@@ -58,6 +67,8 @@ Further reading:
 
 ---
 ### Problem Solving
+How to solve problems 101. A description of different problem solving methods and what personally works for me.
+
 Further reading:
   - [Rubber Ducky Method](https://makersacademy.medium.com/what-is-rubber-duck-debugging-d3028d70a707#:~:text=Rubber%20duck%20debugging%20is%20a,%2Dline%2C%20to%20that%20duck.)
   - [How to read error messages](https://www.gustavwengel.dk/googling-error-messages-1)
