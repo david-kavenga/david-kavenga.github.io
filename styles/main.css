@@ -205,7 +205,7 @@ header {
 }
 
 /* Change the link color on hover */
-li a:hover {
+.menu a:hover {
   background-color: #FFC914;
 }
 
@@ -214,22 +214,21 @@ li a:hover {
   background-color: #DC602E;
 }
 
-/* apply to all body links */
-p > a {
-  position: relative;
-  /* z-index: 100;  prevent links from becoming covered and disabled */
-  text-decoration-thickness: 0.05em; 
-  color: #28112B;
-}
-
-p > a:hover{
-  color: #FFC914;
-}
-
 .main-panel{
   width: calc(100vw - 5vw * var(--multiplier)); /* same as header */
   max-width: 1000px;
   margin: auto; 
+}
+
+/* apply to all main panel links */
+.main-panel a {
+  text-decoration-thickness: 0.05em; 
+  color: #28112B;
+}
+
+.main-panel a:hover{
+  color: #FFC914;
+  background-color: none;
 }
 
 .body-section{
@@ -270,6 +269,14 @@ figure {
   border-radius: 5px;
 }
 
+figure > p {
+  padding: calc(5px * var(--spacings-multiplier));
+  font-size: calc(1 * var(--body-font));
+  background-color: rgba(27, 166, 197, 0.75);
+  color: #28112B;
+  border-radius: 5px;
+}
+
 figcaption {
   padding: 5px;
   color: rgb(0, 0, 0);
@@ -278,16 +285,6 @@ figcaption {
   text-align: center;
   word-wrap: break-word;
 }
-
-figcaption > a {
-  text-decoration-thickness: 0.05em; 
-  color: #28112B;
-}
-
-figcaption > a:hover{
-  color: #FFC914;
-}
-
 
 .figure-image{
   width: 100%;
@@ -326,7 +323,7 @@ figcaption > a:hover{
   border-radius: 5px;
 }
 
-/* If you want text inside of the container */
+/* Text inside of the homepage blog link containers */
 .cell > a span {
   font-size: calc(.75 * var(--body-font));
 }
@@ -342,6 +339,14 @@ figcaption > a:hover{
 
 #fixit > span {
   font-size: calc(3 * var(--body-font));
+}
+
+.tag-blue {
+  background-color: rgba(27, 166, 197, 0.75);
+}
+
+.tag-orange {
+  background-color: #EE9521;
 }
 
 h1 {
