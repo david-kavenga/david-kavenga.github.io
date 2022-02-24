@@ -221,10 +221,7 @@ Enjoy!
           <figcaption>Repl.it stack trace</figcaption>
         </figure>
         <p>
-          A list of all the processes your program was in the middle of. Remember, a function can be called from a function, so while following regular control flow, chances are that an error occurs mid-way through executing multiple functions.
-        </p>
-        <p>
-          The stack trace tells you which order the functions were called in and also where they come from. Some might be written by you, others could be from external libraries or built in functions.
+          A list of all the processes your program was in the middle of. Remember, a function can be called from a function, so while following regular control flow, chances are that an error occurs mid-way through executing multiple functions. The stack trace tells you which order the functions were called in and also where they come from. Some might be written by you, others could be from external libraries or built in functions.
         </p>
         <p>
           Let's explore the example above. There are three functions: <em>average</em>, <em>Object.&lt;anonymous&gt;</em> and <em>Module._compile</em>. We can ignore the latter two because those aren't functions we wrote and chances are the problem isn't there. The stacktrace tells us the error is at index.js:27:12. Looking to line 27 of our code, we see it is the average function. Our <em>ReferenceError</em> tells us <q>arrr is not defined</q>. Hang on, we clearly wrote <code>arrr[num]</code> on line 27. Oh! there's an extra 'r' there. It should be <code>arr[num]</code>
@@ -237,7 +234,7 @@ Enjoy!
           Other times, it can be hard to know what the best way of going about something might be. Googling a set of terms relevant to your problem can unlock unique ways to go about solving it. In other words, you could identify new pieces of logic to use in your solution.
         </p>
         <p>
-          Googling also becomes important for checking how built in functions work. Because many people around the world use them, how they work is well documented. A quick search for the inbuilt function name and the language will net you a handy guide!
+          Googling also becomes important for checking how built-in functions work. Because many people around the world use them, how they work is well documented. A quick search for the inbuilt function name and the language will net you a handy guide!
         </p>
         <h4 id="m6">Rubber Ducky Method <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
         <p>
