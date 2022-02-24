@@ -56,10 +56,12 @@
         <p>
           Naturally all this was frustrating. I thought perhaps I was being punished for not being lucky, or smart enough to just "get it". When I eventually did find the issue (I set some variables to 0 instead of 1), it was almost a face to palm moment.
         </p>
-        <figure>
-          <p>
-            Sometimes, despite our best efforts we just can't work out how to solve a problem. We are blocked. It can seem like no matter how much thinking we do, we can't get our head around it. That may make us feel stupid or inadequate, but the answer shouldn't be to give up on ourselves.
-          </p>
+        <figure class="quote-blue">
+          <blockquote>
+            <p>
+            Despite our best efforts at times we just can't work out how to solve a problem. We are blocked. It can seem like no matter how much thinking we do, we can't get our head around it. That may make us feel stupid or inadequate, but the answer shouldn't be to give up on ourselves.
+            </p>
+          </blockquote>
         </figure>
         <p>
           I realised that it wasn't my fault or anyone else's that I had encountered the problem, I just needed to be a little more careful with the techniques I used to solve it. I knew the math in theory needed variables with initial values of 1, but because it wasn't written in the algorithm, I didn't notice as I checked the algorithm against my code. In other words, I wasn't exploring the full picture in my step-by-step analysis.
@@ -74,10 +76,12 @@
         <p>
           In our team, we decided the really brilliant members would focus all their efforts on the biggest problems, while the rest of us worked through as many simple problems as possible to pad our team's score. One particular problem I'm proud of solving asked us to read a document, output some information, and then re-read the document to find all the matches to what we had output. This kind of problem normally requires a slow running solution. I was hesitant about being able to solve it in time.
         </p>
-        <figure>
-          <p>
-            Consciously planning before going about solving a problem can reduce the need to make attempts and then back-track things that just don't work. We can use techniques like pseudocoding to step through a problem mentally before even beginning to write a solution.
-          </p>
+        <figure class="quote-blue">
+          <blockquote>
+            <p>
+              Consciously planning before going about solving a problem can reduce the need to make attempts and then back-track things that just don't work. We can use techniques like pseudocoding to step through a problem mentally before even beginning to write a solution.
+            </p>
+          </blockquote>
         </figure>
         <p>
           I sat down after reading the problem brief and began to think about all of the cases where I would need to output something from my program. Writing these down in a list, I realised they were so similar I wouldn't need to read the document twice. I could just read it once in a very particular fashion. A shortcut! This completely changed how fast our solution would run. I wrote some pseudocode for how I thought it should go and quickly ran the solution by my other teammate. Then I got to work.
@@ -89,23 +93,23 @@
       <section class="body-section">
         <h3>Techniques and Processes</h3>
         <p>
-          There are many different ways to go about solving problems. Some involve thinking about the logic of a program in a specific way, others help you get unstuck when you hit a block. To me, it is useful to think of the scenario I might use a given technique, so for this section, I will use the tags <code class="tag-blue">logic</code> and <code class="tag-orange">debugging</code> to note that.
+          There are many different ways to go about solving problems. Some involve thinking about the logic of a program in a specific way, others help you get unstuck when you hit a block. For me, it is useful to think of the scenario I might use a given technique, so for this section, I will use the tags <code class="tag-blue">logic</code> and <code class="tag-orange">debug</code> to note that.
         </p>
         <p>
           Useful methods (in the order I like to use them):
         </p>
         <ul>
-          <li><h6><a href="#m1">Pseudocode</a></h6> <code class="tag-blue">logic</code></li>
-          <li><h6><a href="#m2">Trying something</a></h6> <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m3">Console.logging</a></h6> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m4">Reading error messages</a></h6> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m5">Googling</a></h6> <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m6">Rubber Ducky Method</a></h6> <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m7">Asking your peers for help</a></h6> <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m8">Asking your coaches for help</a></h6> <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></li>
-          <li><h6><a href="#m9">Improving your process with reflection</a></h6> <code class="tag-blue">logic</code></li>
-        </ul>
-        <h4 id="m1">Pseudocode <code class="tag-blue">logic</code></h4>
+          <li><h6><a href="#m1">Pseudocode</a> <code class="tag-blue">logic</code></h6></li>
+          <li><h6><a href="#m2">Trying something</a> <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m3">Console.logging</a> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m4">Reading error messages</a> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m5">Googling</a> <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m6">Rubber Ducky Method</a> <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m7">Asking your peers for help</a> <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m8">Asking your coaches for help</a> <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h6></li>
+          <li><h6><a href="#m9">Improving your process with reflection</a> <code class="tag-blue">logic</code></li>
+          </ul>
+          <h4 id="m1">Pseudocode <code class="tag-blue">logic</code></h6></h4>
         <p>
           Many people naturally begin to plan the steps they will take when they encounter a problem. The aim with Pseudocode is to break a problem down into much smaller steps in plain English. It allows us to solidify those steps into actionable snippets as well as provide us with a reminder of what we are trying to do whenever we step away, or even get lost in the details.
         </p>
@@ -116,24 +120,72 @@
           Commenting your code before you start can help keep each piece of code nicely segmented and simple. For example:
         </p>
         <p>
-          Having a pseudocode block for reference can remind you of the overall flow of your program.
+          Keeping a pseudocode block for reference can remind you of the overall flow of your program.
         </p>
-        <h4 id="m2">Trying something <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></h4>
-
-        <h4 id="m3">Console.logging <code class="tag-orange">debugging</code></h4>
-
-        <h4 id="m4">Reading error messages <code class="tag-orange">debugging</code></h4>
-
-        <h4 id="m5">Googling code <class="tag-blue">logic</code> <code class="tag-orange">debugging</code></h4>
-
-        <h4 id="m6">Rubber Ducky Method <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></h4>
-
-        <h4 id="m7">Asking your peers for help <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></h4>
-
-        <h4 id="m8">Asking your coaches for help <code class="tag-blue">logic</code> <code class="tag-orange">debugging</code></h4>
-
+        <h4 id="m2">Trying something <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
+        <p>
+          Often issues with a solution can be preemptively solved by just trying something out ahead of time. If I wanted to write a piece of code which averaged a set of test scores from all the students in a class, usually I would make sure I had first tried and tested an averaging function. Perhaps I’d also test accessing the score of an individual student. Knowing what is possible and works well can inform both our program’s logic as well as identify problems.
+        </p>
+        <h4 id="m3">Console.logging <code class="tag-orange">debug</code></h4>
+        <p>
+          Often when programming, we manage information that can’t be seen by our eyes while our program is running. Logging variables to the console allows us to see what information our program has and therefore catch inconsistencies we might not have been aware of.
+        </p>
+        <h4 id="m4">Reading error messages <code class="tag-orange">debug</code></h4>
+        <p>
+          When your code is doing something wrong, chances are when you go to run it an error message gets spit out. These are helpful for pinpointing the specific point at which your code goes wrong, and therefore offering a chance to resolve the issue. Most error messages can be broken down into a couple of helpful pieces.
+        </p>
+        <p>
+          The error message: This can be the type of error, what value was expected and what was observed. Often it gives a file name and a line. You can think of these as the apparent culprits for the error.
+        </p>
+        <p>
+          The stack trace: A list of all the processes your program was in the middle of. Remember, a function can be called from a function, so while following regular control flow, chances are that an error occurs mid-way through executing multiple functions. Some functions might be your own, but chances are there are inbuilt or library functions involved too.
+        </p>
+        <p>
+          The stack trace tells you which order the functions were called in and also where they come from. Some might be written by you, others could be from external libraries or built in functions.
+        </p>
+        <h4 id="m5">Googling <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
+        <p>
+          Perhaps a tool of infinite power. Sometimes we might have no idea what a specific error message means, but chances are someone else has had the same error message in the past. Googling allows us to find out how they solved it, as well as potentially stumble into more useful explanations or cleaner alternative solutions.
+        </p>
+        <p>
+          Other times, it can be hard to know what the best way of going about something might be. Googling a set of terms relevant to your problem can unlock unique ways to go about solving it. In other words, you could identify new pieces of logic to use in your solution.
+        </p>
+        <h4 id="m6">Rubber Ducky Method <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
+        <p>
+          Sometimes sharing a problem helps bring forth the insight we need to solve it. Have you ever explained a problem to a friend and in the process realised exactly what you need to do, without your friend even responding? That’s what we try to emulate with the rubber ducky method. 
+        </p>
+        <p>
+          Imagine, or have, a rubber ducky in your hand while you explain your code to it. Start with general goals, move to the details (line by line) and then on to program flow. Remember, a rubber duck can’t ask questions or give you feedback, so the aim is to expand upon each aspect of your code in detail to the duck. 
+        </p>
+        <figure class="quote-blue">
+          <blockquote>
+            <p>
+              A good duck need not ask and a good programmer omits no details.
+            </p>
+          </blockquote>
+          <figcaption class="fig-quote">—Duck (probably)</figcaption>
+        </figure>
+        <p>
+          Eventually you’ll find that explaining your code offers you insights you might not have had, or perhaps just forgot, and allow you to identify your mistakes. This method is also really powerful for looking at someone else’s code, because it requires you to understand each part as you go.
+        </p>
+        <h4 id="m7">Asking your peers for help <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
+        <p>
+          At times we find ourselves lost and completely unsure of how to best proceed. These are the times where asking peers for help is the most beneficial. A fresh set of eyes might quickly spot the issue our own eyes have glazed over, or a peer might be able to explain key logical steps we hadn’t thought of.
+        </p>
+        <p>
+          The key to best utilising peer help, is to have a clear idea of what it was you were trying to do and what it is you have done so that they can quickly get up to speed. Screenshots of your code, or a copy of the error message you are receiving can help get the message across if you aren't in person.
+        </p>
+        <h4 id="m8">Asking your coaches for help <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
+        <p>
+          Similar to asking your peers, in a study programme you usually have coaches who are avaliable to help you when you get stuck. They probably know the ins and outs of the tasks you are trying to complete, and therefore have a good idea of how to help you. Remember that coaches can be busy helping others, so make sure to make a decent effort to solve problems yourself before going to them.
+        </p>
         <h4 id="m9">Improving your process with reflection <code class="tag-blue">logic</code></h4>
-
+        <p>
+          The final technique of problem solving is arguably more important than all the rest. Reflecting is about thinking back on what you have done in your attempts to solve the problem, what worked and what didn't. Then, thinking about how you might approach the problem differently next time, for a more efficient result.
+        </p>
+        <p>
+          Reflecting applies to all kinds of problems, not just those in programming, however, one unique tool to programming is the ability to <em>refactor</em> code. When your initial solution isn't very elegant, you have the power to go back and clean it up. This can help solidify your learning and helps others understand what's going on.
+        </p>
       </section>
     </div>
   </body>
