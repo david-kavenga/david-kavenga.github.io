@@ -257,7 +257,9 @@ header {
 }
 
 .body-image-emoji{
-  width: calc(.8 * var(--body-font)); 
+  position: relative;
+  top: 0.3vw;
+  width: calc(1 * var(--body-font)); 
   display: inline-block; /* displayed inline with text */
 }
 
