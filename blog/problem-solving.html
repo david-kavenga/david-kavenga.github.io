@@ -59,7 +59,7 @@
         <figure class="quote-blue">
           <blockquote>
             <p>
-            Despite our best efforts at times we just can't work out how to solve a problem. We are blocked. It can seem like no matter how much thinking we do, we can't get our head around it. That may make us feel stupid or inadequate, but the answer shouldn't be to give up on ourselves.
+            Despite our best efforts, at times we just can't work out how to solve a problem. We are blocked. It can seem like no matter how much thinking we do, we can't get our head around it. That may make us feel stupid or inadequate, but the answer shouldn't be to give up on ourselves.
             </p>
           </blockquote>
         </figure>
@@ -116,12 +116,82 @@
         <p>
           Something like this:
         </p>
+        <pre><code class="language-javascript">
+Bake a cake:
+
+1. Get a bowl
+2. Place all the ingredients in the bowl
+3. Mix the ingredients
+4. Get a cake tray
+5. Pour the mixture into the tray
+6. Bake the cake at 180 Degrees Celsius
+7. Let the cake cool
+
+Enjoy!
+        </code></pre>
         <p>
-          Commenting your code before you start can help keep each piece of code nicely segmented and simple. For example:
+          Commenting your code before you start can help keep each piece of code nicely segmented and simple. For example, these are some pseudocode comments for my Fizzbuzz solution in JavaScript:
+        </p>
+        <pre><code class="language-javascript" style="color: rgb(106, 153, 85);">
+<span>// FizzBuzz (Super Edition)</span>
+
+<span>// Fizzbuzzes on an individual number</span>
+<span>// fizzBuzz function</span>
+  <span>// Prepare replacement string</span>
+  <span>// Check if number is multiple of 3</span>
+    <span>// Add Fizz to replacement string</span>
+  <span>// Check if number is a multiple of 5</span>
+    <span>// Add Buzz to replacement string</span>
+  <span>// Multiples of 15 are already FizzBuzzed</span>
+  <span>// If number is not multiple of 3 or 5</span>
+    <span>// Return number</span>
+  <span>// Else</span>
+    <span>// Return replacement string</span>
+    
+<span>// Fizzbuzzes an entire array</span>
+<span>// superFizzBuzz function</span>
+  <span>// loop over array</span>
+    <span>// call fizzbuzz to replace each element</span>
+  <span>// Return modified array</span>
+        </code></pre>
+        <p>
+          Keeping a pseudocode block for reference can remind you of the overall flow of your program. 
         </p>
         <p>
-          Keeping a pseudocode block for reference can remind you of the overall flow of your program.
+          Not far from the final solution:
         </p>
+        <pre><code class="language-javascript" style="color: rgb(106, 153, 85);">
+<span>// FizzBuzz (Super Edition)</span>
+
+<span>// Fizzbuzzes on an individual number</span>
+<span>// fizzBuzz function</span>
+<span class="code-normal">function fizzbuzz(num) {</span>
+  <span>// Prepare replacement string</span>
+  <span class="code-normal">let replace = ''</span>
+  <span>// Check if number is multiple of 3</span>
+  <span class="code-normal">if(num%3 == 0){</span>
+    <span>// Add Fizz</span>
+    <span class="code-normal">replace += 'Fizz'</span>
+  <span class="code-normal">}</span>
+  <span>// Check if number is a multiple of 5</span>
+  <span class="code-normal">if(num%5 == 0){</span>
+    <span>// Add Buzz</span>
+    <span class="code-normal">replace += 'Buzz'</span>
+  <span class="code-normal">}</span>
+  <span>// Multiples of 15 are already FizzBuzzed</span>
+
+  <span>// Return replacement string</span>
+  <span>// If number is not multiple of 3 or 5</span>
+  <span>// Return number</span>
+  <span class="code-normal">return (replace!='' ? replace : num)</span>
+<span class="code-normal">}</span>  
+<span>// Fizzbuzzes an entire array</span>
+<span>// superFizzBuzz function</span>
+<span class="code-normal">function super_fizzbuzz(arr) {</span>
+  <span>// map fizzbuzz to the number array!</span>
+  <span class="code-normal">return arr.map(num => fizzbuzz(num))</span>
+<span class="code-normal">}</span>
+          </code></pre>
         <h4 id="m2">Trying something <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
         <p>
           Often issues with a solution can be preemptively solved by just trying something out ahead of time. If I wanted to write a piece of code which averaged a set of test scores from all the students in a class, usually I would make sure I had first tried and tested an averaging function. Perhaps I’d also test accessing the score of an individual student. Knowing what is possible and works well can inform both our program’s logic as well as identify problems.
@@ -130,18 +200,34 @@
         <p>
           Often when programming, we manage information that can’t be seen by our eyes while our program is running. Logging variables to the console allows us to see what information our program has and therefore catch inconsistencies we might not have been aware of.
         </p>
+        <p>
+          Javascript makes it very simple with <code>console.log()</code> For example, in my FizzBuzz function above I could <code>console.log('Fizz')</code> every time the number was a multiple of 3, to make sure it was happening. I could even <code>console.log(replace)</code> before returning to make sure the replacement string had the right FizzBuzz.
+        </p>
         <h4 id="m4">Reading error messages <code class="tag-orange">debug</code></h4>
         <p>
           When your code is doing something wrong, chances are when you go to run it an error message gets spit out. These are helpful for pinpointing the specific point at which your code goes wrong, and therefore offering a chance to resolve the issue. Most error messages can be broken down into a couple of helpful pieces.
         </p>
+        <h6>The <em>error message</em> :</h6> 
+        <figure>
+          <img class="figure-image" src="images/errorLog1.png" alt="An error log from repl.it"> 
+          <figcaption>Repl.it error message</figcaption>
+        </figure>
         <p>
-          The error message: This can be the type of error, what value was expected and what was observed. Often it gives a file name and a line. You can think of these as the apparent culprits for the error.
+          This can be the type of error, what value was expected and what was observed. Often it gives a file name and a line. You can think of these as the apparent culprits for the error. In the example above, it says <q>SyntaxError: Invalid or unexpected token</q> and tells me the error is on line 13 of index.js. Looking at line 13 closely, I've missed a closing apostrophe!
         </p>
+        <h6>The <em>stack trace</em> :</h6> 
+        <figure>
+          <img class="figure-image" src="images/errorLog2.png" alt="An error log from repl.it"> 
+          <figcaption>Repl.it stack trace</figcaption>
+        </figure>
         <p>
-          The stack trace: A list of all the processes your program was in the middle of. Remember, a function can be called from a function, so while following regular control flow, chances are that an error occurs mid-way through executing multiple functions. Some functions might be your own, but chances are there are inbuilt or library functions involved too.
+          A list of all the processes your program was in the middle of. Remember, a function can be called from a function, so while following regular control flow, chances are that an error occurs mid-way through executing multiple functions.
         </p>
         <p>
           The stack trace tells you which order the functions were called in and also where they come from. Some might be written by you, others could be from external libraries or built in functions.
+        </p>
+        <p>
+          Let's explore the example above. There are three functions: <em>average</em>, <em>Object.&lt;anonymous&gt;</em> and <em>Module._compile</em>. We can ignore the latter two because those aren't functions we wrote and chances are the problem isn't there. The stacktrace tells us the error is at index.js:27:12. Looking to line 27 of our code, we see it is the average function. Our <em>ReferenceError</em> tells us <q>arrr is not defined</q>. Hang on, we clearly wrote <code>arrr[num]</code> on line 27. Oh! there's an extra 'r' there. It should be <code>arr[num]</code>
         </p>
         <h4 id="m5">Googling <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
         <p>
@@ -149,6 +235,9 @@
         </p>
         <p>
           Other times, it can be hard to know what the best way of going about something might be. Googling a set of terms relevant to your problem can unlock unique ways to go about solving it. In other words, you could identify new pieces of logic to use in your solution.
+        </p>
+        <p>
+          Googling also becomes important for checking how built in functions work. Because many people around the world use them, how they work is well documented. A quick search for the inbuilt function name and the language will net you a handy guide!
         </p>
         <h4 id="m6">Rubber Ducky Method <code class="tag-blue">logic</code> <code class="tag-orange">debug</code></h4>
         <p>
