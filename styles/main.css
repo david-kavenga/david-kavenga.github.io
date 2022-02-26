@@ -8,6 +8,7 @@
   --body-font: 6vw;
   --dropdown-font: 3.5vw;
   --banner-font: 6vw;
+  --iframe-size: 11vw;
 }
 
 /* applies to all devices larger than 320px */
@@ -19,6 +20,7 @@
     --body-font: calc(1rem + 0.2rem * var(--headings-multiplier));
     --banner-font: calc(2rem * 0.5 * var(--headings-multiplier));
     --dropdown-font: calc(1.8rem * 0.3 * var(--headings-multiplier));
+    --iframe-size: 10.5vw;
 	}
 
   .small-figure{
@@ -32,6 +34,7 @@
 		--multiplier: 1.5;
     --headings-multiplier: 1.6;
     --spacings-multiplier: 1.5;
+    --iframe-size: 50px;
 	}
 
   .menu > ul{
@@ -447,4 +450,14 @@ iframe {
   display: block;
   border-style: none;
   border: 0;
+}
+
+#calculator{
+  width: calc(8 * var(--iframe-size));
+  height: calc(10.5 * var(--iframe-size));
+}
+
+#penguin{
+  width: calc(5 * var(--iframe-size));
+  height: calc(5.5 * var(--iframe-size));
 }
