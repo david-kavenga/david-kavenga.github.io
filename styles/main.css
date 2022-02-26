@@ -446,4 +446,5 @@ iframe {
   margin: auto;
   display: block;
   border-style: none;
+  border: 0;
 }
