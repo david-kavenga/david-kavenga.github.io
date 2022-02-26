@@ -458,6 +458,6 @@ iframe {
 }
 
 #penguin{
-  width: calc(5 * var(--iframe-size));
+  width: calc(5.5 * var(--iframe-size));
   height: calc(5.5 * var(--iframe-size));
 }
