@@ -461,3 +461,17 @@ iframe {
   width: calc(5.5 * var(--iframe-size));
   height: calc(5.5 * var(--iframe-size));
 }
+
+#carnival{
+  text-align: center;
+  font-family: 'Rye', cursive;
+  font-size: calc(1.4*var(--body-font));
+  background-color: lightpink;
+  border-radius: 5px;
+}
+
+#carnival > span{
+  font-family: 'Rye', cursive;
+  font-size: calc(1.8*var(--body-font));
+  background-color: lightpink;
+}
