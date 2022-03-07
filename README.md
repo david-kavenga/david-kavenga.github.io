@@ -127,7 +127,9 @@ It is displayed on the demo page using a small `<iframe>` with no border. The pe
 ```
 This shows some of the key rules which dictate the movement of the penguin's right hand. Animation duration, name, iteration count, transformation origin and timing function are defined. `@keyframes` defines rules for the animation. In this case, the arm is rotated four times during the animation. The percentages correspond to how far through the animation (of the total 3s) the transformation occurs.
 
-<hr>
+<br>
+
+---
 
 ### *There's a Sea in my Bedroom*
 
@@ -180,6 +182,8 @@ Magic :)
 
 Sadly, this trick might not be supported in internet explorer, so the site has a back-up background colour defined as well.
 
+<br>
+
 ---
 
 ### On Colour
@@ -198,14 +202,86 @@ Normally, when creating a new colour scheme, I have in mind a specific idea that
 
 I've made a small habit of adding a link to the colorschemes in my css files, so that I can both easily see the colours next to eachother, but also copy the hex codes quickly.
 
+<br>
 
 ---
 
 ### Calculator
 
+For this project, I created a calculator from pseudocode derived from freeCodeCamp's [example calculator](https://codepen.io/freeCodeCamp/pen/EPNZYW). There are still some steps to get it functional enough to pass the tests at [freeCodeCamp](https://www.freecodecamp.org/learn/front-end-development-libraries/front-end-development-libraries-projects/build-a-javascript-calculator), but the current iteration is a working calculator.
+
+I had some difficulties in creating the calculator, some of which I'll detail below, along with the solution I came up with.
+
+<br>
+
+#### Buttons
+
+As with the example calculator, i wanted to have my calculator buttons arranged like a simple dollar-store calculator. This meant having 5 rows of 5 buttons, but making the addition button cover two rows.
+
+My original solution split the button elements on the HTML page into different div containers, declaring the positioning of the plus button to be absolute with an offset, and all the other buttons aligned left-wards so that they moved out of the way. This was perfectly viable for a static calculator, but I also wanted to have the ability to resize my view. As I did, the plus button 'travelled'.
+
+Solving this required switching to a grid layout and specifying that the plus button cover two rows. It's amazing how little time this took to do compared to the countless hours I spent late on a Saturday night trying to manually adjust pixel multipliers in the original solution.
+
+However, there was still work to be done getting the grid to appear correctly on Safari browsers. It turns out Safari doesn't like percentage sizes for dynamically sized elements. This caused my buttons to slide off the calculator on iPhones.}
+
+Thankfully, because I knew i had solid scaling variables, I could just set the grid container to a known width and that fixed the display issue.
+
+<br>
+
+#### Evaluation
+
+The freeCodeCamp solution to storing input and evaluating it when the '=' button is pressed meant that the expressions were evaluated with Immediate Execution Logic. This was fine for the initial build as proof of concept, but I wanted my calculator to be able to handle a little more and use Expression Logic instead.
+
+Searching around the internet, and with some advice from pairs, I eventually found the `Function` constructor in JavaScript would allow for the evaluation of a string of inputs. Apparently, the `eval()` function, while doing the same thing, in JavaScript can be a bit risky to use.
+
+From there I tried to solve a problem with floating point precision 5.6 + 2.1 should not equal 7.699999999 on a simple calculator! Here, the `parseFloat()` and `.toFixed()` inbuilt methods were invaluable.
+
+For huge numbers too big for the screen, I decided I wanted scientific notation. Looking around for a method I found `.toExponential()` which allowed me to set a number of digits. I checked my result's length for each calculation and ran toExponential each time the number of digits exceeded 15 (what the display can comfortably hold).
+
+Lastly, to get the calculator to it's current form, I added edge-case checks for incorrect expression inputs. Thank you to everyone who tested my calcultor and pointed these edge cases out to me!
+
+<br>
+
 ---
 
 ### JavaScript Carnival
+
+A fun set of projects where the HTML, CSS and resources were provided to us and we then wrote JS to make the activities function
+
+The three activities were:
+* [Inflate the Balloon](#inflate-the-balloon)
+* [Whack-a-mole](#whack-a-mole)
+* [Dress the clown](#dress-the-clown)
+
+<br>
+
+#### Inflate the Balloon
+
+Switch between images of a balloon being blown up by a unicorn when clicked. Display a message and sound when the balloons are inflated.
+
+During the creation of this activity, I realise that HTML element objects can be stored in arrays like any other Javascript object. Learning how to get the target of an event listener and matching that to the pre-existing array with `.find` allowed me to update the correct unicorn's images.
+
+Attaching the speech bubbles to the Unicorns as the spoke was done using `.getBoundingClientRectangle` on the clicked unicorn's img element and then setting that as the left and top values for an `absolute` positioned text-box gif.
+
+<br>
+
+#### Whack-a-mole
+
+Create a whack-a-mole game with scoring and random mole placement.
+
+In this activity, I started by creating an array of cells, and writing a placeMole function to put the mole in a random location. The mole image element is created and destroyed each time the mole moves.
+
+Then I created an interval to also move the mole every second. Currently this can cause the mole to move a little erratically, if the interval is soon after a click on the mole, but it makes for a good amount of frustration as the missed mole plays a "neener neener" type audio clip.
+
+<br>
+
+#### Dress the clown
+
+Allow the user to select bodyparts with the up and down arrows, then cycle between clothing with the left and right arrows to dress the clown as they desire. Add a screenshot feature to save the resulting outfit.
+
+Simple functions control whether the bodypart index or clothingpiece indexes change or not, and the current image is set to a source derived from both bodypart name and index.
+
+The toughest part of creating this activity was to use `HTML2Canvas` and figure out that the parent cell needed to actually be bigger than the elements inside it to capture all the contents in an image.
 
 <br>
 
