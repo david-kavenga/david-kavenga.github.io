@@ -13,10 +13,13 @@ I hope to provide a detailed run-down of website features and style choices as w
   * [JS: Basics and The DOM](#js-basics-and-the-dom)
   * [Neuroplasticity](#neuroplasticity)
   * [Problem Solving](#problem-solving)
+  * [Foundations Reflection](foundations-reflection)
 - [Respect the Tech](#respect-the-tech)
   * [Hello Penguin](#im-taking-this-penguin)
   * [Background](#theres-a-sea-in-my-bedroom)
-  * [Colour scheme](#on-colour)
+  * [Colour Scheme](#on-colour)
+  * [Calculator](#calculator)
+  * [JavaScript Carnival](#javascript-carnival)
 - [Site Planning](#site-planning)
 
 <br>
@@ -72,6 +75,10 @@ How to solve problems 101. A description of different problem solving methods an
 Further reading:
   - [Rubber Ducky Method](https://makersacademy.medium.com/what-is-rubber-duck-debugging-d3028d70a707#:~:text=Rubber%20duck%20debugging%20is%20a,%2Dline%2C%20to%20that%20duck.)
   - [How to read error messages](https://www.gustavwengel.dk/googling-error-messages-1)
+
+---
+### Foundations Reflections
+A look into my experience with the foundations portion of DevAcademy.
 
 <br>
 
@@ -173,11 +180,32 @@ Magic :)
 
 Sadly, this trick might not be supported in internet explorer, so the site has a back-up background colour defined as well.
 
-<hr>
+---
 
-### On colour
+### On Colour
+
+Choosing a colour-palette for different areas of the website was initially daunting, but one of my peers posted a link to a very simple and useful tool for quickly getting a set of colours that complement eachother. This site is called [Coolors](https://coolors.co/).
+
+Normally, when creating a new colour scheme, I have in mind a specific idea that serves as the centrepiece for the rest of the colours.
+
+* For the website itself, this was the [sea and horizon](https://coolors.co/ffc914-33658a-1ca9c9-28112b-dc602e).
 
 
+* For my calculator, it was a little [Donkey Kong](https://coolors.co/a63a50-f0e7d8-19323c-a1674a-ba6e6e).
+
+* And for my [minesweeper](https://david-kavenga.github.io/minesweeper/) game, it was a [music video](https://coolors.co/fff07c-1f271b-08a045-665687-ef476f) from my favourite artist at the moment.
+<p align="center"><img src="./resources/readme/DPR_cake.webp" width="100%"></p>
+
+I've made a small habit of adding a link to the colorschemes in my css files, so that I can both easily see the colours next to eachother, but also copy the hex codes quickly.
+
+
+---
+
+### Calculator
+
+---
+
+### JavaScript Carnival
 
 <br>
 
