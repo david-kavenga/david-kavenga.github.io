@@ -11,8 +11,8 @@
   --iframe-size: 11vw;
 }
 
-/* applies to all devices larger than 320px */
-@media (min-width: 320px) {
+/* applies to all devices larger than 320px in portrait */
+@media (min-width: 320px) and (orientation: portrait){
   :root {
 		--multiplier: 1.1;
     --headings-multiplier: 1.2;
@@ -28,39 +28,72 @@
   }
 }
 
+/* applies to all devices larger than 320px in landscape */
+@media (min-width: 320px) and (orientation: landscape){
+  .body-section > .body-image{ width: 75%; }
+  .body-section > figure { width: 75%; }
+}
+
+
 /* applies to all devices larger than 480px */
-@media (min-width: 480px) {
+@media (min-width: 480px){
   :root {
 		--multiplier: 1.5;
     --headings-multiplier: 1.6;
     --spacings-multiplier: 1.5;
+    --body-font: calc(1rem + 0.2rem * var(--headings-multiplier));
+    --banner-font: calc(2rem * 0.5 * var(--headings-multiplier));
+    --dropdown-font: calc(1.8rem * 0.3 * var(--headings-multiplier));
     --iframe-size: 50px;
 	}
 
-  .menu > ul{
-    width: 80%;
-  }
+  .menu > ul{ width: 80%; }
+  li > .dropdown a{ height: 50px; }
+}
 
-  li > .dropdown a{
-    height: 50px;
-  }
+/* applies to tablets larger than 768px */
+@media (min-width: 768px) and (orientation: portrait){
+  .body-section > .body-image{ width: 90%; }
+  section > p { word-wrap: normal }
 }
 
 /* applies to all devices larger than 768px */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: landscape){
 	:root {
 		--multiplier: 2;
     --headings-multiplier: 2;
     --spacings-multiplier: 2;
+    --body-font: calc(1rem + 0.2rem * var(--headings-multiplier));
+    --banner-font: calc(2rem * 0.5 * var(--headings-multiplier));
+    --dropdown-font: calc(1.8rem * 0.3 * var(--headings-multiplier));
+    --iframe-size: 50px;
 	}
 
-  .body-section > .body-image{
-    width: 90%;
-  }
+  .body-section > .body-image{ width: 85%; }
+  .body-section > figure { width: 85%; }
+  section > p { word-wrap: normal }
+}
 
-  section > p {
-    word-wrap: normal;
-  }
+/* applies to all devices larger than 1200px */
+@media (min-width: 1200px) {
+	:root {
+		--multiplier: 2.5;
+    --headings-multiplier: 2.5;
+    --spacings-multiplier: 2;
+	}
+
+  body > header{ max-width: 1100px; }
+  .banner > #page-title { margin-left: 12px; }
+  #header-icons .icon-link { margin-right: 12px; }
+  li > .dropdown a{ height: 62.5px; }
+  .main-panel > .body-section { padding: 12px 50px; }
+  body > .main-panel{ max-width: 1100px; }
+  span > .body-image-emoji{ top: 3.6p }
+  .small-figure:not(#fixit){ width: 40%; }
+  figure > blockquote{ margin: 0px 36px; }
+  figure > .fig-quote{ margin-right: 72px; }
+  .body-section > .body-image{ width: 90%; }
+  section > p { word-wrap: normal; }
 }
 
 /*apply to all elements */
@@ -128,7 +161,7 @@ header {
   filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.25));
 }
 
-#header-icons .icon-link{
+.banner .icon-link{
   margin-right: 1vw;
   font-size: calc(1.25* var(--banner-font));
 }
@@ -199,6 +232,7 @@ header {
 
 /* apply to the last list element in dropdown */
 .dropdown li:last-child > a{
+  height: calc(35px * var(--multiplier));
   border-radius: 0px 0px 10px 10px;
 }
 
@@ -272,6 +306,7 @@ figure {
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.25);
   margin-bottom: 20px;
   border-radius: 5px;
+  text-align: center;
 }
 
 .quote-blue {
